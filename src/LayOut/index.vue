@@ -29,12 +29,16 @@ export default {
   name: 'LayOut',
   data () {
     return {
-      activeIndex: ' '
+      activeIndex: '/',
+      MyIndex: '/'
     }
   },
   methods: {
     handleSelect (key) {
-      this.$router.push(key)
+      if (key !== this.MyIndex) {
+        this.$router.push(key)
+        this.MyIndex = key
+      }
     }
   }
 }
